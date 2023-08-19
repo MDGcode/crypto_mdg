@@ -101,8 +101,10 @@ export default function Coin(props: CoinProps) {
             <div className="info grid grid-cols-2">
               <div className="coin-heading flex items-center m-4">
                 <img src={coin.image.small} alt="" />
-                <p className=" p-4">{coin.name}</p>
-                <p className=" p-4 uppercase">{coin.symbol}</p>
+                <div className=" grid grid-cols-1">
+                  <p className="pl-2">{coin.name}</p>
+                  <p className=" pl-3 uppercase">({coin.symbol})</p>
+                </div>
               </div>
               <div className="coin-price flex items-center justify-center">
                 {coin.market_data.current_price.eur?.toLocaleString()} €
