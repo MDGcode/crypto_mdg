@@ -4,6 +4,7 @@ import CoinItem from "./CoinItem";
 
 export default function Coins(props: any) {
   const [query, setQuery] = useState("");
+  console.log(query);
   return (
     <>
       <div className=" max-w-3/4 md:max-w-7xl m-auto">
@@ -29,7 +30,7 @@ export default function Coins(props: any) {
             .filter((coins: any) => {
               return query.toLowerCase() === ""
                 ? coins
-                : coins.id.toLowerCase().includes(query);
+                : coins.id.toLowerCase().includes(query.toLowerCase());
             })
             .map((coins: any) => {
               return <CoinItem coins={coins} key={coins.id} />;
